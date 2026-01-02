@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #F8FAFC; /* gray-50 */
+    --color-foreground: #0F172A; /* slate-900 */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #0F172A; /* slate-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #0F172A; /* slate-900 */
+    
+    /* Primary Colors */
+    --color-primary: #0066FF; /* blue-600 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #1E293B; /* slate-800 */
+    --color-secondary-foreground: #F8FAFC; /* gray-50 */
+    
+    /* Accent Colors */
+    --color-accent: #3B82F6; /* blue-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Muted Colors */
+    --color-muted: #E2E8F0; /* slate-200 */
+    --color-muted-foreground: #475569; /* slate-600 */
+    
+    /* Destructive/Error Colors */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Border and Input */
+    --color-border: #E2E8F0; /* slate-200 */
+    --color-input: #E2E8F0; /* slate-200 */
+    --color-ring: #3B82F6; /* blue-500 */
+    
+    /* Brand Specific Colors */
+    --color-brand-primary: #0066FF; /* blue-600 */
+    --color-brand-secondary: #00D4AA; /* teal-400 */
+    --color-conversion-accent: #FF6B35; /* orange-500 */
+    --color-trust-builder: #2ECC71; /* green-500 */
+    --color-deep-navy: #0A0E1A; /* custom-navy */
+    --color-deep-authority: #0A0E27; /* custom-dark-blue */
+    --color-text-secondary: #8892B0; /* slate-400 */
+    --color-cta-blue: #0052CC; /* blue-700 */
+    
+    /* Spacing */
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  button, .btn {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  code, pre, .code-block {
+    font-family: 'Space Mono', monospace;
+  }
+}
