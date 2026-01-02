@@ -3,7 +3,7 @@ import Header from '@/components/common/Header';
 import DeveloperPortalInteractive from './components/DeveloperPortalInteractive';
 
 export const metadata: Metadata = {
-  title: 'Developer Portal - CryptoVault EVM',
+  title: 'Developer Portal - MANO',
   description: 'Comprehensive technical documentation, APIs, SDKs, testnet access, and developer grants for building on CryptoVault EVM blockchain network.',
 };
 

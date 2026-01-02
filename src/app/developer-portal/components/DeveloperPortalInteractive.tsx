@@ -182,7 +182,7 @@ export default function DeveloperPortalInteractive() {
     title: "Connect to CryptoVault EVM",
     language: "JavaScript",
     code: `import { ethers } from 'ethers'
-;\n\n// Connect to CryptoVault EVM mainnet\nconst provider = new ethers.JsonRpcProvider(\n  'https://rpc.cryptovault-evm.io'\n);\n\n// Get network information\nconst network = await provider.getNetwork();\nconsole.log('Connected to:', network.name);\nconsole.log('Chain ID:', network.chainId);\n\n// Get latest block\nconst blockNumber = await provider.getBlockNumber();\nconsole.log('Latest block:', blockNumber);`
+;\n\n// Connect to CryptoVault EVM mainnet\nconst provider = new ethers.JsonRpcProvider(\n  'https://rpc1-m.anolabs.site'\n);\n\n// Get network information\nconst network = await provider.getNetwork();\nconsole.log('Connected to:', network.name);\nconsole.log('Chain ID:', network.chainId);\n\n// Get latest block\nconst blockNumber = await provider.getBlockNumber();\nconsole.log('Latest block:', blockNumber);`
   },
   {
     title: "Deploy Smart Contract",
@@ -338,27 +338,28 @@ export default function DeveloperPortalInteractive() {
   {
     title: "Add Network to MetaMask",
     description: "Configure your wallet to connect to CryptoVault EVM testnet",
-    command: "Network Name: CryptoVault Testnet | RPC URL: https://testnet-rpc.cryptovault-evm.io | Chain ID: 9999",
+    command: "Network Name: CryptoVault Mainnet | RPC URL: https://rpc1-m.anolabs.site | Chain ID: 9999",
     completed: false
   },
-  {
-    title: "Get Testnet Tokens",
-    description: "Request free testnet tokens from our faucet to start testing",
-    command: "curl -X POST https://faucet.cryptovault-evm.io/api/claim -d '{\"address\":\"YOUR_ADDRESS\"}'",
-    completed: false
-  },
-  {
-    title: "Deploy Test Contract",
-    description: "Deploy your first smart contract to the testnet",
-    command: "npx hardhat run scripts/deploy.js --network cryptovault-testnet",
-    completed: false
-  },
-  {
-    title: "Verify Contract",
-    description: "Verify your contract on the testnet block explorer",
-    command: "npx hardhat verify --network cryptovault-testnet DEPLOYED_CONTRACT_ADDRESS",
-    completed: false
-  }];
+  // {
+  //   title: "Get Testnet Tokens",
+  //   description: "Request free testnet tokens from our faucet to start testing",
+  //   command: "curl -X POST https://faucet.cryptovault-evm.io/api/claim -d '{\"address\":\"YOUR_ADDRESS\"}'",
+  //   completed: false
+  // },
+  // {
+  //   title: "Deploy Test Contract",
+  //   description: "Deploy your first smart contract to the testnet",
+  //   command: "npx hardhat run scripts/deploy.js --network cryptovault-testnet",
+  //   completed: false
+  // },
+  // {
+  //   title: "Verify Contract",
+  //   description: "Verify your contract on the testnet block explorer",
+  //   command: "npx hardhat verify --network cryptovault-testnet DEPLOYED_CONTRACT_ADDRESS",
+  //   completed: false
+  // }
+  ];
 
 
   const tabs = [
@@ -501,10 +502,10 @@ export default function DeveloperPortalInteractive() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-headline font-bold text-[#0f172a] mb-4">
-              Testnet Setup
+              Mainnet Setup
             </h2>
             <p className="text-lg text-[#475569]">
-              Get started with CryptoVault EVM testnet in 4 simple steps
+              Get started with CryptoVault EVM mainnet in 4 simple steps
             </p>
           </div>
           <TestnetSetup steps={testnetSteps} />

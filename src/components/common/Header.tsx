@@ -1,21 +1,25 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Icon from '@/components/ui/AppIcon';
+import { useState } from "react";
+import Link from "next/link";
+import Icon from "@/components/ui/AppIcon";
 
 interface HeaderProps {
   className?: string;
 }
 
-const Header = ({ className = '' }: HeaderProps) => {
+const Header = ({ className = "" }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { label: 'Home', href: '/homepage', icon: 'HomeIcon' },
-    { label: 'Developer Portal', href: '/developer-portal', icon: 'CodeBracketIcon' },
-    { label: 'Network Dashboard', href: '/network-dashboard', icon: 'ChartBarIcon' },
-    { label: 'Ecosystem', href: '/ecosystem-overview', icon: 'CubeTransparentIcon' },
+    { label: "Home", href: "/homepage", icon: "HomeIcon" },
+    {
+      label: "Developer Portal",
+      href: "/developer-portal",
+      icon: "CodeBracketIcon",
+    },
+    // { label: 'Network Dashboard', href: '/network-dashboard', icon: 'ChartBarIcon' },
+    // { label: 'Ecosystem', href: '/ecosystem-overview', icon: 'CubeTransparentIcon' },
   ];
 
   const toggleMobileMenu = () => {
@@ -23,34 +27,16 @@ const Header = ({ className = '' }: HeaderProps) => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-[#ffffff] shadow-md ${className}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#ffffff] shadow-md ${className}`}
+    >
       <div className="flex items-center justify-between h-16 px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/homepage" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300">
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="flex-shrink-0"
-          >
-            <rect width="40" height="40" rx="8" fill="#0066ff" />
-            <path
-              d="M20 10L28 15V25L20 30L12 25V15L20 10Z"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M20 20L28 15M20 20L12 15M20 20V30"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+        <Link
+          href="/homepage"
+          className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300"
+        >
+          <img className="w-10 h-10" src="./app.png" />
           <span className="text-xl font-headline font-bold text-[#0f172a] hidden sm:block">
             MANO
           </span>
@@ -72,17 +58,17 @@ const Header = ({ className = '' }: HeaderProps) => {
 
         {/* CTA Buttons - Desktop */}
         <div className="hidden lg:flex items-center space-x-3">
-          <Link
+          {/* <Link
             href="/developer-portal"
             className="px-4 py-2 text-sm font-cta font-semibold text-[#0066ff] hover:text-[#0052cc] transition-colors duration-300"
           >
             Documentation
-          </Link>
+          </Link> */}
           <Link
-            href="/network-dashboard"
+            href="https://anolabs.site"
             className="px-6 py-2 bg-[#0066ff] text-[#ffffff] rounded-lg text-sm font-cta font-bold hover:bg-[#0052cc] transition-all duration-300 shadow-[#ffffff] hover:shadow-cta-[#0066ff]"
           >
-            Start Building
+            ANO Labs
           </Link>
         </div>
 
@@ -93,7 +79,7 @@ const Header = ({ className = '' }: HeaderProps) => {
           aria-label="Toggle mobile menu"
         >
           <Icon
-            name={isMobileMenuOpen ? 'XMarkIcon' : 'Bars3Icon'}
+            name={isMobileMenuOpen ? "XMarkIcon" : "Bars3Icon"}
             size={24}
             variant="outline"
           />

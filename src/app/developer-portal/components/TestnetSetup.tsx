@@ -37,7 +37,7 @@ export default function TestnetSetup({ steps: initialSteps }: TestnetSetupProps)
   return (
     <div className="bg-[#ffffff] rounded-xl border border-[#e2e8f0] overflow-hidden">
       <div className="bg-[#1e293b] px-6 py-4 border-b border-[#e2e8f0]">
-        <h3 className="text-lg font-headline font-bold text-[#0f172a] flex items-center space-x-2">
+        <h3 className="text-lg font-headline font-bold text-[#0fffff] flex items-center space-x-2">
           <Icon name="RocketLaunchIcon" size={24} variant="outline" className="text-[#0066ff]" />
           <span>Testnet Setup Guide</span>
         </h3>
