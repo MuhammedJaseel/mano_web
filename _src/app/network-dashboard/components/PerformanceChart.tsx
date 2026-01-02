@@ -123,19 +123,19 @@ export default function PerformanceChart({ data }: PerformanceChartProps) {
         <div className="bg-muted/30 rounded-lg p-4">
           <p className="text-xs text-muted-foreground mb-1">Current {currentConfig.unit}</p>
           <p className="text-2xl font-bold text-foreground">
-            {data[data.length - 1][currentConfig.dataKey]}
+            {/* {data[data.length - 1][currentConfig.dataKey]} */}
           </p>
         </div>
         <div className="bg-muted/30 rounded-lg p-4">
           <p className="text-xs text-muted-foreground mb-1">24h Average</p>
           <p className="text-2xl font-bold text-foreground">
-            {Math.round(data.reduce((sum, d) => sum + d[currentConfig.dataKey], 0) / data.length)}
+            {/* {Math.round(data.reduce((sum, d) => sum + d[currentConfig.dataKey], 0) / data.length)} */}
           </p>
         </div>
         <div className="bg-muted/30 rounded-lg p-4">
           <p className="text-xs text-muted-foreground mb-1">24h Peak</p>
           <p className="text-2xl font-bold text-foreground">
-            {Math.max(...data.map(d => d[currentConfig.dataKey]))}
+            {/* {Math.max(...data.map(d => d[currentConfig.dataKey]))} */}
           </p>
         </div>
       </div>

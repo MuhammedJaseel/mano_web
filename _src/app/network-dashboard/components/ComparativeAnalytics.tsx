@@ -136,7 +136,7 @@ export default function ComparativeAnalytics({ comparisonData }: ComparativeAnal
               )}
             </div>
             <p className="text-2xl font-bold text-foreground">
-              {network[currentConfig.dataKey]}
+              {/* {network[currentConfig.dataKey]} */}
             </p>
             <p className="text-xs text-muted-foreground mt-1">{currentConfig.unit}</p>
           </div>
