@@ -6,7 +6,8 @@ export default function AccessLogger() {
     const logAccess = async () => {
       try {
         let logId = localStorage.getItem("logId");
-        if (logId) logId = "new";
+
+        if (!logId) logId = "new";
         else if (logId?.length !== 24) logId = "new";
 
         const url = `https://api.anolabs.site/acces-status/${logId}/m_web`;
