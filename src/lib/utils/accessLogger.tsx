@@ -8,7 +8,8 @@ export default function AccessLogger() {
         let logId = localStorage.getItem("logId");
         if (logId) logId = "new";
 
-        const url = `https://api.anolabs.site/acces-status/${logId}/web.m`;
+        // const url = `https://api.anolabs.site/acces-status/${logId}/web.m`;
+        const url = `http://localhost:4518/acces-status/${logId}/m_web`;
 
         const response = await fetch(url, {
           method: "GET",
