@@ -21,50 +21,40 @@ export default function LiveMetricsFeed() {
 
   useEffect(() => {
     setIsHydrated(true);
-    getTransactions().then((res) => {
-      const txns: Transaction[] = [];
-      for (let it of res.data.data)
-        txns.push({
-          id: shortenHash(it.th),
-          type: "Coin Transfer",
-          amount: Number(ethers.formatEther(it.v)).toFixed(3) + " MANO",
-          time: timeAgo(it.ts),
-          status: "success",
-        });
-      setTransactions(txns);
-    });
-
-    // setTransactions([
-    //   {
-    //     id: "0x7a8f...3d2e",
-    //     type: "Swap",
-    //     amount: "1,250 CVLT",
-    //     time: "2s ago",
-    //     status: "success",
-    //   },
-    //   {
-    //     id: "0x9b2c...5f1a",
-    //     type: "Transfer",
-    //     amount: "500 CVLT",
-    //     time: "5s ago",
-    //     status: "success",
-    //   },
-    //   {
-    //     id: "0x4e6d...8c9b",
-    //     type: "Stake",
-    //     amount: "10,000 CVLT",
-    //     time: "8s ago",
-    //     status: "pending",
-    //   },
-    //   {
-    //     id: "0x1f3a...7d4c",
-    //     type: "Bridge",
-    //     amount: "2,500 CVLT",
-    //     time: "12s ago",
-    //     status: "success",
-    //   },
-    // ]);
+    loadData()
+    connectSocket(loadData);
   }, []);
+
+  const connectSocket = (reload: Function) => {
+    const ws = new WebSocket("wss://api-scanm.anolabs.site");
+    ws.onopen = () => {
+      console.log("Connected to WebSocket server");
+      ws.send("Hello from browser!");
+    };
+    ws.onmessage = (event) => {
+      if (JSON.parse(event.data).msg === "new_txn") reload();
+    };
+    ws.onclose = () => {
+      console.log("Disconnected from server");
+    };
+  };
+
+  const loadData = async () => {
+    try {
+      getTransactions().then((res) => {
+        const txns: Transaction[] = [];
+        for (let it of res.data.data)
+          txns.push({
+            id: shortenHash(it.hash),
+            type: "Coin Transfer",
+            amount: Number(ethers.formatEther(it.value)).toFixed(3) + " MANO",
+            time: timeAgo(it.timestamp),
+            status: "success",
+          });
+        setTransactions(txns);
+      });
+    } catch (err) {}
+  };
 
   if (!isHydrated) {
     return (
