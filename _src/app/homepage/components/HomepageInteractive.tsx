@@ -59,7 +59,7 @@ export default function HomepageInteractive() {
 
   const features: Feature[] = [
   {
-    title: 'EVM Compatible',
+    title: 'EVM Compatible-',
     description: 'Seamlessly deploy your existing Ethereum smart contracts without any modifications. Full compatibility with Solidity and all EVM tools.',
     icon: 'CodeBracketIcon',
     color: 'bg-primary'
