@@ -67,8 +67,7 @@ export default function HomepageInteractive() {
       value: "3",
       change: "+0.0%",
       trend: "up",
-      icon: "",
-      // icon: "🔐",
+      icon: "🔐",
     },
     {
       label: "Daily Transactions",
