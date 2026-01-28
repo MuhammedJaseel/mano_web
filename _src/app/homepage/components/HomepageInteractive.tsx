@@ -51,7 +51,7 @@ export default function HomepageInteractive() {
   }, []);
 
   const networkMetrics: NetworkMetric[] = [
-  { label: 'Total Value Locked', value: '$1.2B', change: '+12.5%', trend: 'up', icon: '💰' },
+  { label: 'Total Value Locked', value: '$1.3B', change: '+12.5%', trend: 'up', icon: '💰' },
   { label: 'Active Validators', value: '2,847', change: '+8.3%', trend: 'up', icon: '🔐' },
   { label: 'Daily Transactions', value: '4.2M', change: '+15.7%', trend: 'up', icon: '⚡' },
   { label: 'Network TPS', value: '12,500', change: '+5.2%', trend: 'up', icon: '🚀' }];
